@@ -8,11 +8,9 @@ import java.util.Scanner;
             this.titulo = titulo;
             this.ano = ano;
         }
-
         public String getTitulo() {
             return titulo;
         }
-
         public int getano() {
             return ano;
         }
