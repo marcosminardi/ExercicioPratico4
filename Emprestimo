@@ -1,0 +1,32 @@
+enum TipoEmprestimo {
+    CURTO_PRAZO,
+    LONGO_PRAZO
+}
+
+public class Emprestimo {
+
+        private Material material;
+        private TipoEmprestimo tipo;
+
+        public Emprestimo(Material material, TipoEmprestimo tipo) {
+            this.material = material;
+            this.tipo = tipo;
+        }
+
+        public Material getMaterial() {
+            return material;
+        }
+
+        public TipoEmprestimo getTipo() {
+            return tipo;
+        }
+    public double Multa(int atraso) {
+        double multa = 0;
+        if (tipo == TipoEmprestimo.CURTO_PRAZO) {
+            multa = atraso * 0.5;
+        } else if (tipo == TipoEmprestimo.LONGO_PRAZO) {
+            multa = atraso * 0.3;
+        }
+        return multa;
+    }
+}
