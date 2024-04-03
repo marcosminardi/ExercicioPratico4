@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class TesteBiblioteca {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o título do material: ");
+        String titulo = scanner.nextLine();
+        System.out.print("Digite o ano de publicação do material: ");
+        int anoPublicacao = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Digite ''livro'' ou ''revista'' para a identificação: ");
+        String tipoMaterial = scanner.nextLine();
+
+        Material material;
+
+        if (tipoMaterial.equalsIgnoreCase("livro")) {
+            material = new Material(titulo, anoPublicacao);
+        } else if (tipoMaterial.equalsIgnoreCase("revista")) {
+            material = new Material(titulo, anoPublicacao);
+        } else {
+            System.out.println("Tipo de material inválido.");
+            return;
+        }
+
+        System.out.print("Digite ''curto'' para curto prazo ou ''longo'' para longo prazo: ");
+        String tipoEmprestimo = scanner.nextLine();
+
+        TipoEmprestimo tipo;
+
+        if (tipoEmprestimo.equalsIgnoreCase("curto")) {
+            tipo = TipoEmprestimo.CURTO_PRAZO;
+        } else if (tipoEmprestimo.equalsIgnoreCase("longo")) {
+            tipo = TipoEmprestimo.LONGO_PRAZO;
+        } else {
+            System.out.println("Tipo de empréstimo inválido.");
+            return;
+        }
+
+        System.out.print("Digite a quantidade de dias de atraso do material: ");
+        int atraso = scanner.nextInt();
+
+        Emprestimo emprestimo = new Emprestimo(material, tipo);
+
+        System.out.println("Empréstimo realizado com sucesso:");
+        System.out.println("Título do material: " + emprestimo.getMaterial().getTitulo());
+        System.out.println("Ano de publicação do material: " + emprestimo.getMaterial().getano());
+        System.out.println("Tipo de empréstimo: " + emprestimo.getTipo());
+        System.out.println("Total de multa por atraso: " + emprestimo.Multa(atraso) + "R$");
+    }
+}
