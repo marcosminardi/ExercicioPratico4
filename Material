@@ -1,0 +1,19 @@
+import java.util.Scanner;
+    public class Material {
+
+        private String titulo;
+        private int ano;
+
+        public Material(String titulo, int ano) {
+            this.titulo = titulo;
+            this.ano = ano;
+        }
+
+        public String getTitulo() {
+            return titulo;
+        }
+
+        public int getano() {
+            return ano;
+        }
+    }
