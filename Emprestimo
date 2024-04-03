@@ -4,7 +4,6 @@ enum TipoEmprestimo {
 }
 
 public class Emprestimo {
-
         private Material material;
         private TipoEmprestimo tipo;
 
@@ -12,11 +11,9 @@ public class Emprestimo {
             this.material = material;
             this.tipo = tipo;
         }
-
         public Material getMaterial() {
             return material;
         }
-
         public TipoEmprestimo getTipo() {
             return tipo;
         }
